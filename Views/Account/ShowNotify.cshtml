@@ -1,0 +1,22 @@
+@model HnNotify.Data.dtoShowLineNotifyS
+<div class="card-body">
+    <img class="card-img-top card-img-top1" src="~/images/HN_LOGO.jpg" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Hello @Html.DisplayFor(x => x.Name)</h5>
+        <ul class="list-group">
+        <li class="list-group-item active">@ViewBag.Line</li>
+            @foreach (var p in Model.dtoLine)
+            {
+                <li class="list-group-item">@p.Name</li>
+            }
+        </ul>
+
+        <ul class="list-group" style="padding-top:20px;">
+            <li class="list-group-item active">@ViewBag.Mail</li>
+            @foreach (var p in Model.dtoMail)
+            {
+                <li class="list-group-item">@p.Name</li>
+            }
+        </ul>
+    </div>
+</div>

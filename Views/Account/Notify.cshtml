@@ -1,0 +1,64 @@
+@model HnNotify.Data.dtoNotifyS
+
+@using (Html.BeginForm("Notify", "Account", FormMethod.Post, new { enctype = "multipart/form-data", id = "Notify", name = "Notify" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        
+        <div class="card-body">
+            <div class="form-group row">
+                <img class="card-img-top card-img-top1" src="~/images/HN_LOGO.jpg">
+            </div>
+            <div class="form-group row">
+                <div></div>
+                <div></div>
+                <div class="col-sm-6 col-6 text-primary text-center">服務項目名稱</div>
+                <div class="col-sm-2 col-3 text-primary text-center">Line</div>
+                <div class="col-sm-2 col-3 text-primary text-center">Mail</div>
+            </div>
+
+            @{
+                int i = 0;
+            }
+            
+            @foreach (var p in Model.dtoNotify)
+            {
+                <div class="form-group row">
+                    <div>
+                        @Html.Hidden("dtoNotify[" + i + "].Member_Counter", p.Member_Counter)
+                    </div>
+                    <div>
+                        @Html.Hidden("dtoNotify[" + i + "].NotifyItem_Counter", p.NotifyItem_Counter)
+                    </div>
+
+                    <div class="col-sm-6 col-8">@p.NotifyItem_Name</div>
+                    <div class="col-sm-2 col-2">
+                        <div class="form-check text-center">
+                            @Html.CheckBox("dtoNotify[" + i + "].Line", p.Line)
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-2">
+                        <div class="form-check text-center">
+                            @Html.CheckBox("dtoNotify[" + i + "].Mail", p.Mail)
+                        </div>
+                    </div>
+                </div>
+                i++;
+            }
+
+            <div class="form-group" style="padding-top:10px;">
+                <label for="MAIL" class="text-primary">若有勾選Mail請輸入或確認電子郵件 
+                    <strong class="text-danger">
+                        @Html.DisplayFor(x => x.errMsg)
+                    </strong> 
+                </label>
+                @Html.TextBoxFor(x => x.MAIL , new { placeholder = "請輸入電子郵件 ", AutoComplete = "Off", tabindex = "1" ,@class="form-control"} )
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">確認訂閱</button>
+            </div>
+
+        </div>
+    </div>
+    
+}

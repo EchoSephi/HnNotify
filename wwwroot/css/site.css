@@ -1,0 +1,122 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+.card-img-top1{
+    width: 80%;
+    height: 60%;   
+    padding-left: 30%;
+    padding-right: 20%;
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.conn {
+    padding-top: 10%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+
+@media(max-width:600px) {
+   
+  }
+  
+  /* 大平板橫立 大螢幕*/
+  @media only screen and (min-width: 1281px) {
+    .conn {
+        padding-top:5%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+  }
+  
+  @media only screen and (min-width: 1029px) and (max-width: 1280px) {
+    
+  }
+  
+  /* 平板橫立 大平板直立*/
+  @media only screen and (min-width: 979px) and (max-width: 1028px) {
+    .conn {
+        padding-top:5%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+  }
+  
+  /* 大手機橫立 */
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .conn {
+        padding-top:1%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+  }
+  
+  /* 手機橫立 */
+  @media only screen and (max-width: 767px) {
+    .conn {
+        padding-top:1%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .container{
+        padding-top: 0;
+    }
+  }
+    
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .conn {
+        padding-top:0;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .container{
+        padding-top: 1%;
+    }
+  }
+  
+  /* 手機直立 */
+  @media only screen and (max-width: 479px) {
+    .conn {
+        padding-top: 1%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .container{
+        padding-top: 0;
+    }
+  }
